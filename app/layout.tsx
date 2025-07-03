@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "AptiNation",
   description: "AptiNation : Aptitude boosting platform",
   icons: {
-  icon: "/icons/logo.png",
+  icon:"/icons/logo.png",
 }
 
 };
