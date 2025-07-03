@@ -115,7 +115,7 @@ export default function Navbar() {
 
         {/* Login/SignUp Button */}
         <button
-          className="text-white font-bold text-lg bg-transparent hover:bg-gray-800 px-6 py-2 rounded transition cursor-pointer"
+          className="text-white font-bold text-lg bg-transparent rounded-4xl hover:bg-gray-800 px-6 py-2 rounded transition cursor-pointer"
           onClick={() => router.push("/login")}
         >
           Login/SignUp
