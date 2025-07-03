@@ -7,8 +7,7 @@ const exams = [
   "UPSC", "SSC", "RAILWAY", "CAT",
   "CA", "CFA", "UGC", "RBI",
   "JUDICIARY", "NEET", "DEFENSE",
-  "NURSING"
-];
+  "NURSING"];
 
 export default function HeroSection() {
   const router = useRouter();
