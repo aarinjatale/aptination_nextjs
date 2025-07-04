@@ -5,3 +5,16 @@ body {
   background-color: #fff !important;
   color: #000 !important;
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 20s) linear infinite;
+  animation-direction: var(--animation-direction, forwards);
+}
