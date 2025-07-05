@@ -36,7 +36,7 @@ export default function Navbar() {
     };
   }, [openDropdown]);
 
-  // Helper for rendering dropdowns
+  
   const renderDropdown = () => (
     <div className="absolute left-0 mt-2 bg-white rounded shadow-lg p-4 flex gap-6 z-20">
       {dropdownItems.map((col, idx) => (
@@ -75,7 +75,7 @@ export default function Navbar() {
 
         {/* Hamburger for mobile */}
         <button
-          className="lg:hidden p-2 rounded-full focus:outline-none"
+          className="lg:hidden p-2 cursor-pointer rounded-full focus:outline-none hover:rounded-full "
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +146,7 @@ export default function Navbar() {
 
         {/* Try Premium Pill */}
         <button
-          className="hidden lg:block ml-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-lg px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer"
+          className="hidden lg:block ml-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-lg px-8 py-2 rounded-full shadow hover:from-yellow-500 ml=150 hover:to-yellow-700 transition cursor-pointer"
           onClick={() => router.push("/premium")}
         >
           Try Premium
@@ -216,7 +216,7 @@ export default function Navbar() {
               </button>
             </form>
             <button
-              className="text-white font-bold text-2xl bg-yellow-500 rounded-full px-8 py-2 mt-4"
+              className="text-white font-bold text-2xl bg-black hover:bg-gray-800 rounded-full px-8 py-2 mt-4"
               onClick={() => { setMobileMenuOpen(false); router.push("/login"); }}
             >
               Login/SignUp
