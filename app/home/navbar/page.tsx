@@ -150,7 +150,7 @@ export default function Navbar() {
 
         {/* Try Premium Pill */}
         <button
-          className="ml-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-lg px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer"
+          className="ml-4 bg-gradient-to-r  from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-lg px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer"
           onClick={() => router.push("/premium")}
         >
           Try Premium
