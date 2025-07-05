@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState<"exams" | "topic" | null>(null);
   const router = useRouter();
 
-  const examsRef = useRef();
-  const topicRef = useRef();
+  const examsRef = useRef<HTMLDivElement>(null);
+  const topicRef = useRef<HTMLDivElement>(null);
 
   const dropdownItems = [
     ["UPSC", "SSC", "RAILWAY"],
@@ -18,19 +18,21 @@ export default function Navbar() {
     ["NEET", "DEFENSE", "NURSING"]
   ];
 
-  // Detect click outside for dropdowns
   useEffect(() => {
-    function handleClickOutside(event) {
+    function handleClickOutside(event: MouseEvent) {
+      const target = event.target as Node;
       if (
-        (openDropdown === "exams" && examsRef.current && !examsRef.current.contains(event.target)) ||
-        (openDropdown === "topic" && topicRef.current && !topicRef.current.contains(event.target))
+        (openDropdown === "exams" && examsRef.current && !examsRef.current.contains(target)) ||
+        (openDropdown === "topic" && topicRef.current && !topicRef.current.contains(target))
       ) {
         setOpenDropdown(null);
       }
     }
+
     if (openDropdown) {
       document.addEventListener("mousedown", handleClickOutside);
     }
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -61,7 +63,7 @@ export default function Navbar() {
             {/* Exams Dropdown */}
             <div ref={examsRef} className="relative">
               <button
-                className="text-white font-bold text-lg px-2 py-1 cursor-pointer rounded  hover:bg-gray-800 rounded-4xl focus:outline-none"
+                className="text-white font-bold text-lg px-2 py-1 cursor-pointer hover:bg-gray-800 rounded-4xl focus:outline-none"
                 onClick={() => setOpenDropdown(openDropdown === "exams" ? null : "exams")}
               >
                 Exams
@@ -88,7 +90,7 @@ export default function Navbar() {
             {/* Topic Dropdown */}
             <div ref={topicRef} className="relative">
               <button
-                className="text-white font-bold text-lg px-2 py-1 rounded focus:outline-none cursor-pointer  hover:bg-gray-800 rounded-4xl"
+                className="text-white font-bold text-lg px-2 py-1 hover:bg-gray-800 rounded-4xl focus:outline-none cursor-pointer"
                 onClick={() => setOpenDropdown(openDropdown === "topic" ? null : "topic")}
               >
                 Topic
@@ -113,8 +115,12 @@ export default function Navbar() {
               )}
             </div>
             {/* Resources Link */}
-            <Link href="#" className="text-white hover:underline font-bold text-lg px-2 py-1 rounded " onClick={() => router.push("/resource")}>
-              Resources 
+            <Link
+              href="#"
+              className="text-white hover:underline font-bold text-lg px-2 py-1 rounded"
+              onClick={() => router.push("/resource")}
+            >
+              Resources
             </Link>
           </div>
 
@@ -141,7 +147,7 @@ export default function Navbar() {
 
           {/* Login/SignUp Button */}
           <button
-            className="text-white font-bold text-lg bg-transparent rounded-4xl hover:bg-gray-800 px-6 py-2 rounded transition cursor-pointer"
+            className="text-white font-bold text-lg bg-transparent rounded-4xl hover:bg-gray-800 px-6 py-2 transition cursor-pointer"
             onClick={() => router.push("/login")}
           >
             Login/SignUp
@@ -150,7 +156,7 @@ export default function Navbar() {
 
         {/* Try Premium Pill */}
         <button
-          className="ml-4 bg-gradient-to-r  from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-lg px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer"
+          className="ml-4 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-lg px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer"
           onClick={() => router.push("/premium")}
         >
           Try Premium

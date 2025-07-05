@@ -2,9 +2,10 @@
 import React from "react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 
-export function HeroScrollDemo() {
+export default function PreviewPage() {
   return (
-    <div className="relative flex flex-col overflow-hidden bg-white font-poppins text-white min-h-[80vh]">
+    <div>
+       <div className="relative flex flex-col overflow-hidden bg-white font-poppins text-white min-h-[80vh]">
       {/* Grid Background */}
       <div
         className="
@@ -39,6 +40,7 @@ export function HeroScrollDemo() {
           />
         </ContainerScroll>
       </div>
+    </div>
     </div>
   );
 }
