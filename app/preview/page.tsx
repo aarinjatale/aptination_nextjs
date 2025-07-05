@@ -4,8 +4,7 @@ import { ContainerScroll } from "../ui/container-scroll-animation";
 
 export default function PreviewPage() {
   return (
-    <div>
-       <div className="relative flex flex-col overflow-hidden bg-white font-poppins text-white min-h-[80vh]">
+    <div className="relative flex flex-col overflow-hidden bg-white font-poppins text-black min-h-[80vh]">
       {/* Grid Background */}
       <div
         className="
@@ -20,14 +19,12 @@ export default function PreviewPage() {
       <div className="relative z-10">
         <ContainerScroll
           titleComponent={
-            <>
-              <h1 className="text-4xl md:text-5xl font-semibold text-black font-poppins">
-                Perfect Analysis <br />
-                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none font-poppins">
-                  For Perfect Results
-                </span>
-              </h1>
-            </>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-black font-poppins text-center">
+              Perfect Analysis <br />
+              <span className="text-2xl sm:text-4xl md:text-[6rem] font-bold mt-1 leading-none font-poppins block">
+                For Perfect Results
+              </span>
+            </h1>
           }
         >
           <img
@@ -35,12 +32,11 @@ export default function PreviewPage() {
             alt="hero"
             height={720}
             width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            className="mx-auto rounded-xl sm:rounded-2xl object-cover w-full max-w-full h-56 sm:h-96 md:h-full object-left-top"
             draggable={false}
           />
         </ContainerScroll>
       </div>
-    </div>
     </div>
   );
 }
