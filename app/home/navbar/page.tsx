@@ -222,7 +222,7 @@ export default function Navbar() {
               Login/SignUp
             </button>
             <button
-              className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold text-2xl px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer mt-2"
+              className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black font-bold  text-2xl px-8 py-2 rounded-full shadow hover:from-yellow-500 hover:to-yellow-700 transition cursor-pointer mt-2"
               onClick={() => { setMobileMenuOpen(false); router.push("/premium"); }}
             >
               Try Premium

@@ -46,8 +46,8 @@ export default function HeroSection() {
               {exams.map((exam) => (
                 <button
                   key={exam}
-                  className="w-full py-2 sm:py-3 bg-white rounded-full border font-bold text-sm sm:text-lg cursor-pointer shadow-sm transition hover:bg-gray-100 active:scale-95"
-                  onClick={() => router.push("/clicked")}
+                  className="w-full py-2 sm:py-3 bg-white rounded-full shadow-lgfont-bold text-sm sm:text-lg cursor-pointer shadow-sm transition hover:bg-gray-100 active:scale-95"
+                  onClick={() => router.push("/")}
                 >
                   {exam}
                 </button>
@@ -57,7 +57,7 @@ export default function HeroSection() {
         </div>
       </div>
       {/* Stats Bar */}
-      <div className="relative z-20 w-full flex justify-center rounded-4xl">
+      <div className="relative z-20 w-full flex justify-center rounded-4xl ">
         <div className="bg-white rounded-2xl shadow-xl px-4 sm:px-6 py-6 sm:py-8 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 w-full max-w-5xl mx-auto -mb-12 sm:-mb-16 md:-mb-20">
           {/* Stat 1 */}
           <div className="flex flex-col items-center flex-1">
