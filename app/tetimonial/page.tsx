@@ -1,9 +1,5 @@
 "use client";
-
-import React from "react";
 import { InfiniteMovingCards } from "../ui/infini-moving-cards";
-
-// Testimonial data
 const testimonials = [
   {
     quote:
